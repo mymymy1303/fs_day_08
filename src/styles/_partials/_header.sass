@@ -1,48 +1,51 @@
 header
-	background: $belize-hole
-	button.navbar-toggler
-		color: white
-	.navbar-brand
-		img 
-			max-height: 1rem
-	.collapse.navbar-collapse
-		align-items: center
-		justify-content: flex-end
-	ul.navbar-nav
-		li.nav-item
-			padding: 1rem 1rem
-			text-align: center
-			a.nav-link
-				color: white
-				font-size: 1rem
-				text-transform: uppercase
-				padding: 0
-				transition: .3s all ease-in-out
-				&:hover
-					color: lighten($belize-hole, 30%)
-	+media-breakpoint-up(sm)
-		// Small devices (landscape phones, less than 768px)
-		ul.navbar-nav
-			flex-direction: initial
-			flex-wrap: wrap
-			li.nav-item
-				flex: 0 0 50%
-				max-width: 50%
-	+media-breakpoint-up(md)
-		// Medium devices (tablets, less than 992px)
+	background-color: $whites
+	.container.container_no_padding
+		padding: 0
+	.navbar.navbar-expand-md
+		padding: 0
 		.navbar-brand
+			padding-left: 1rem
 			img 
 				max-height: 2rem
+		.collapse.navbar-collapse
+			align-items: center
+			justify-content: flex-end
 		ul.navbar-nav
-			flex-direction: initial
-			flex-wrap: wrap
 			li.nav-item
-				flex: 0 0 33.33%
-				max-width: 33.33%
-	+media-breakpoint-up(lg)
-		// Large devices (desktops, less than 1200px)
-		ul.navbar-nav
-			flex-direction: row
-			li.nav-item
-				flex: initial
-				max-width: initial
+				display: block
+				text-align: center
+				padding: 1.625rem 1rem
+				a.nav-link
+					display: block
+					color: black
+					font-size: 1rem
+					font-weight: 500
+					text-transform: capitalize
+					padding: 0
+					transition: .3s all ease-in-out
+					&:hover
+						color: $grape
+				&:hover
+					box-shadow: inset 4px 0px 0 0 $grape
+	+media-breakpoint-up(sm)
+		// Small devices (landscape phones, less than 768px)
+		.container.container_no_padding
+			max-width: 100%
+	+media-breakpoint-up(md)
+		// Medium devices (tablets, less than 992px)
+		.container.container_no_padding
+			padding-left: 5rem
+			padding-right: 5rem
+		.navbar.navbar-expand-md
+			.navbar-brand
+				img 
+					max-height: 2rem
+			ul.navbar-nav
+				flex-direction: initial
+				flex-wrap: wrap
+				li.nav-item
+					flex: initial
+					max-width: initial
+					&:hover
+						box-shadow: inset 0px 4px 0 0 $grape

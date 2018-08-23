@@ -1,2 +1,275 @@
 body
 	font-family: Roboto
+
+=section($section_bg: $whites, $section_min_height: 368px)
+	min-height: $section_min_height
+	width: 100%
+	display: flex
+	align-items: center
+	justify-content: center
+	background: $section_bg
+	padding: 3rem 0
+
+//WELCOME SLIDER SECTION
+.services_welcome_slider
+	+section(transparent, auto)
+	padding: 0
+	position: relative
+	.main_title
+		position: absolute
+		z-index: 3
+		color: $whites
+		text-align: center
+		width: 100%
+		h1
+			padding: 0 1rem
+			font-size: 2rem
+		p
+			padding: 0 2rem
+			font-size: 1rem
+	.owl-carousel.owl-theme
+		.owl-nav
+			.owl-prev, .owl-next
+				width: 2rem
+				height: 2rem
+				background: darken($basic, 15%)
+				color: white
+				border-radius: 50%
+				outline: none
+				margin: 5px 7px
+		.services_welcome_slider_item
+			.services_welcome_slider_item_img
+				min-height: 300px
+				position: relative
+				img
+					min-height: 300px
+					width: 100%
+					position: absolute
+					top: 0
+					left: 0
+	+media-breakpoint-up(sm)
+		//LANDSCAPE PHONES, 576-768px
+	+media-breakpoint-up(md)
+		//TABLET, DESKTOP, bigger than 768px
+		justify-content: flex-start
+		.main_title
+			text-align: left
+			width: 70%
+			margin: 0 15%
+			h1
+				font-size: 2.5rem
+			p
+				font-size: 1.5rem
+			h1,p
+				padding: 0
+		.owl-carousel.owl-theme
+			position: relative
+			.owl-nav
+				position: absolute
+				top: 50%
+				margin: 0
+				width: 100%
+				transform: translateY(-60%)
+				.owl-prev, .owl-next
+					margin: 0
+					width: 3rem
+					height: 3rem
+					font-size: 3rem
+					background: rgba(0,0,0,.15)
+					position: relative
+					&:hover
+						background: darken($grape, 15%)
+						transition: .3s all ease-in-out
+					span
+						position: absolute
+						width: 100%
+						height: 100%
+						top: -35%
+						left: 0
+				.owl-prev
+					margin-right: 85%
+			.services_welcome_slider_item
+				.services_welcome_slider_item_img
+					min-height: 400px
+					img
+						min-height: 400px
+						top: -60px
+	+media-breakpoint-up(lg)
+		//Large devices, bigger than 992px
+		//Modify slider image viewport in large desktop
+		.owl-carousel.owl-theme
+			.services_welcome_slider_item
+				.services_welcome_slider_item_img
+					min-height: 500px
+					img
+						min-height: 500px
+						top: -60px
+//NEWS SECTION
+.services_news
+	+section($whites)
+	.services_news_item
+		a
+			text-decoration: none
+			figure
+				.services_news_item_img
+					border-radius: 10px
+					overflow: hidden
+					position: relative
+					&:before
+						display: block
+						content: ''
+						position: absolute
+						height: 100%
+						width: 100%
+						background-color: rgba(0,0,0,0.25)
+						opacity: 0
+						top: -100%
+						left: -100%
+						z-index: 1
+						transition: 0.3s all ease-in-out
+					&:after
+						display: block
+						content: ''
+						position: absolute
+						height: 100%
+						width: 100%
+						background-color: rgba(0,0,0,0.25)
+						opacity: 0
+						bottom: -100%
+						right: -100%
+						z-index: 1
+						transition: 0.3s all ease-in-out
+					i
+						position: absolute
+						color: white
+						font-size: 3rem
+						top: 50%
+						left: 50%
+						transform: translateX(-50%) translateY(-50%)
+						opacity: 0
+						z-index: 5
+						transition: 0.3s all ease-in-out
+					img
+						width: 100%
+				figcaption
+					h3
+						font-size: 1rem
+						font-weight: 500
+						line-height: 1.2rem
+						margin-top: 1.1875rem
+						margin-bottom: 0
+						color: #000
+						transition: .3s all ease-in-out
+					time
+						color: darken(#fff, 20%)
+						font-size: .875rem
+					p
+						color: darken(#fff, 30%)
+						font-size: 0.875rem
+						line-height: 1.2rem
+						height: 3.6rem
+						overflow: hidden
+						margin-top: 1.125rem
+						transition: .3s all ease-in-out
+			&:hover,
+			&:active
+				figure
+					.services_news_item_img
+						&:before
+							top: 0
+							left: 0
+							opacity: 1
+						&:after
+							bottom: 0
+							right: 0
+							opacity: 1
+						i
+							opacity: 1
+					figcaption
+						h3
+							color: #9644a2
+						p
+							color: black
+	+media-breakpoint-down(sm)
+		//Landscape phones, min width 576px, max width 767.98px
+		.services_news_item
+			margin-bottom: 6rem
+			&:last-child
+				margin-bottom: 0
+	+media-breakpoint-down(xs)
+		.services_news_item
+			//Portrait phones, less than 576px
+			padding-left: 1.5rem
+			padding-right: 1.5rem
+//CONTACT INFO SECTION
+.services_contact_info
+	+section($cyan, auto)
+	h3
+		color: darken($belize-hole, 15%)
+		text-transform: uppercase
+		font-size: 1.5rem
+		font-weight: 700
+		line-height: 4rem
+		margin: 0
+	ul
+		li
+			a,i,span
+				color: lighten($cyan, 30%)
+			a
+				text-decoration: none
+				i,span
+					transition: .3s all ease-in-out
+				&:hover
+					i,span
+						color: darken($cyan, 30%)
+	ul.links_list
+		li
+			line-height: 3rem
+	+media-breakpoint-up(sm)
+		//LANDSCAPE PHONES 576-768px
+		h3
+			font-size: 1.25rem
+		ul.links_list
+			li
+				line-height: 1.5rem
+		ul.block-2
+			margin-top: 4rem
+
+//PARTNER SECTION
+.services_partner
+	+section($whites, auto)
+	padding: 0 0 3rem 0
+	.owl-carousel.owl-theme
+		.owl-nav
+			.owl-prev, .owl-next
+				background-color: #083e64
+				width: 2rem
+				height: 2rem
+				border-radius: 0
+				color: white
+				margin: 5px 10px
+	+media-breakpoint-up(md)
+		//BIGGER THAN 768px
+		.owl-carousel.owl-theme
+			position: relative
+			.owl-nav
+				//Move navigation buttons to left and right side.
+				.owl-prev, .owl-next
+					position: absolute
+					margin: 0
+					outline: none
+					top: 50%
+					transform: translateY(-50%)
+					transition: .3s all ease-in-out
+					&:hover
+						border-radius: 50%
+						background-color: $whites
+						color: #083e64
+						border: 1px solid #083e64
+					&:active
+						background-color: #083e64
+						color: $whites
+				.owl-prev
+					left: -2rem
+				.owl-next
+					right: -2rem

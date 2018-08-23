@@ -1,3 +1,25 @@
 footer
-	img 
-		max-width: 200px
+	min-height: 80px
+	padding: 2rem 0
+	background-color: #083e64
+	p
+		margin-bottom: 0
+		text-align: center
+		color: $whites
+	.social_buttons
+		display: flex
+		justify-content: center
+		align-items: center
+	+media-breakpoint-up(md)
+		//TABLETS, LARGE DEVICES, bigger than 768px
+		padding: 0
+		.row
+			.col
+				position: relative
+				p
+					position: absolute
+					line-height: 80px
+				.social_buttons
+					position: absolute
+					right: 0
+					transform: translateY(50%)
